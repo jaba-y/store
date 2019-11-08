@@ -8,11 +8,12 @@ import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AddProductsComponent } from 'src/app/add-products/add-products.component';
 import { ProductDescriptionComponent } from './product-description/product-description.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {path: '', component: ProductComponent },
   {path: 'add-product', component: AddProductsComponent},
-  {path: 'product-description/:id', component: ProductDescriptionComponent},
+  {path: 'product-description', component: ProductDescriptionComponent},
   {path: '**', redirectTo: ''}
 ];
 @NgModule({
@@ -26,6 +27,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     RouterModule.forRoot(
       appRoutes
