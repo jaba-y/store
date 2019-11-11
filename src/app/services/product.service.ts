@@ -7,8 +7,7 @@ import { Products } from 'src/app/model/product';
 export class ProductService {
   constructor() { }
 
-  products: Array<Products> = [{
-    id: 1,
+  private products: Array<Products> = [{
     name: 'Color Box',
     // tslint:disable-next-line: max-line-length
     image: 'https://rukminim1.flixcart.com/image/416/416/art-set/z/k/g/asa-products-46-pieces-color-box-original-imaehc8v6rgd3hkx.jpeg?q=70',
@@ -18,7 +17,6 @@ export class ProductService {
     price: 20
   },
   {
-    id: 2,
     name: 'Glass Colors',
     // tslint:disable-next-line: max-line-length
     image: 'https://rukminim1.flixcart.com/image/416/416/jpmxuvk0/art-set/v/m/a/6-shades-glass-color-set-fevicryl-original-imafbttpjznh5r3u.jpeg?q=70',
@@ -28,7 +26,6 @@ export class ProductService {
     price: 5
   },
   {
-    id: 3,
     name: 'Brush sets',
     // tslint:disable-next-line: max-line-length
     image: 'https://rukminim1.flixcart.com/image/416/416/j98t0280/art-set/t/5/f/5406-da-vinci-original-imaez34ge7aqvvhd.jpeg?q=70',
@@ -38,7 +35,6 @@ export class ProductService {
     price: 15
   },
   {
-    id: 4,
     name: 'Water color',
     // tslint:disable-next-line: max-line-length
     image: 'https://rukminim1.flixcart.com/image/416/416/jxrv4i80/art-set/y/g/w/hhash363-hhash-original-imafhahpnuevvmhn.jpeg?q=70',
@@ -48,7 +44,6 @@ export class ProductService {
     price: 13
   },
   {
-    id: 5,
     name: 'Acrylic colors',
     // tslint:disable-next-line: max-line-length
     image: 'https://rukminim1.flixcart.com/image/416/416/k1118cw0/art-set/z/z/p/pidilite-fluid-painting-kit-fevicryl-original-imafkzapwan7xsyw.jpeg?q=70',
@@ -58,7 +53,6 @@ export class ProductService {
     price: 3.5
   },
   {
-    id: 6,
     name: 'Sewing tools',
     // tslint:disable-next-line: max-line-length
     image: 'https://rukminim1.flixcart.com/image/416/416/jmf76vk0/art-craft-kit/x/8/c/sewing-kit-rg-sw1-reglox-original-imaf9bftxxjy6fvj.jpeg?q=70',
@@ -68,7 +62,6 @@ export class ProductService {
     price: 17
   },
   {
-    id: 7,
     name: 'Brush Pen',
     // tslint:disable-next-line: max-line-length
     image: 'https://rukminim1.flixcart.com/image/416/416/jur9nrk0/art-set/6/8/t/brush-pen-set-pack-of-24-multicolor-camlin-original-imaffqazbnpkhezn.jpeg?q=70',
@@ -78,7 +71,6 @@ export class ProductService {
     price: 7
   },
   {
-    id: 8,
     name: 'Oil colors',
     // tslint:disable-next-line: max-line-length
     image: 'https://rukminim1.flixcart.com/image/416/416/jh6l2fk0/art-set/r/4/h/artist-s-oil-color-box-20ml-tubes-12-shades-camlin-original-imaf594mzaxzc8vr.jpeg?q=70',
@@ -88,7 +80,6 @@ export class ProductService {
     price: 9
   },
   {
-    id: 9,
     name: 'Color Wheel',
     // tslint:disable-next-line: max-line-length
     image: 'https://rukminim1.flixcart.com/image/416/416/j6mhxu80/art-craft-kit/y/z/q/sky-kidz-colour-wheel-101-pcs-mitashi-original-imaexfkp22h56jwk.jpeg?q=70',
@@ -98,7 +89,6 @@ export class ProductService {
     price: 10
   },
   {
-    id: 10,
     name: 'Arts set',
     // tslint:disable-next-line: max-line-length
     image: 'https://rukminim1.flixcart.com/image/612/612/jt395zk0/art-set/t/g/8/67-pieces-art-set-zahuu-original-imafeggartygzmnn.jpeg?q=70',
@@ -109,5 +99,8 @@ export class ProductService {
   }];
   getProducts() {
     return this.products;
+  }
+  addProducts(newProduct: Products) {
+      this.products.push(newProduct);
   }
 }
