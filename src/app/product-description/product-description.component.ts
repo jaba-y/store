@@ -7,9 +7,8 @@ import { Products } from '../model/product';
   styleUrls: ['./product-description.component.css']
 })
 export class ProductDescriptionComponent implements OnInit {
-
-  @Input() product: Products;
-
+  id: number;
+  @Input() product: any;
 
   constructor() {
    }

@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div *ngFor="let product of products">
-          <div *ngIf="product.isAvailable">
+          <div >
             <app-product-description [product]="product"></app-product-description>
             </div>
         </div>         

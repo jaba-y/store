@@ -9,10 +9,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AddProductsComponent } from 'src/app/add-products/add-products.component';
 import { ProductDescriptionComponent } from './product-description/product-description.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   {path: '', component: ProductComponent },
   {path: 'add-product', component: AddProductsComponent},
+  {path: 'add-product/:id', component: AddProductsComponent},
   {path: 'product-description', component: ProductDescriptionComponent},
   {path: '**', redirectTo: ''}
 ];
@@ -29,6 +31,7 @@ const appRoutes: Routes = [
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes
     )
