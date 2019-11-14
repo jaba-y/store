@@ -20,10 +20,10 @@ export class AddProductsComponent implements OnInit {
   }
   ngOnInit() {
     this.addForm = new FormGroup({
-      title: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(5), Validators.pattern('[a-z]+$')]),
+      title: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
-      imageUrl: new FormControl('', Validators.required), // /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/
-      amount: new FormControl('', Validators.required), // ^-?(0|[1-9]\d*)?$/
+      imageUrl: new FormControl('', Validators.required),
+      amount: new FormControl('', Validators.required),
       isAvailable: new FormControl('')
     });
     this.route.params.subscribe(params => {
