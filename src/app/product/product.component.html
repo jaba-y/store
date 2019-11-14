@@ -1,9 +1,12 @@
 <div class="container">
     <div class="row">
         <div *ngFor="let product of products">
+           
           <div >
-            <app-product-description [product]="product"></app-product-description>
+            <app-product-description [product]="product" (newAdded)="added($event)" (isDeleted)="deleted($event)"></app-product-description>
+            
             </div>
         </div>         
     </div>
+    <div>{{cart}}</div>
 </div>

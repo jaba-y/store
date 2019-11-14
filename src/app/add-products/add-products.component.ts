@@ -2,10 +2,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ProductService } from '../services/product.service';
-import { Products } from '../model/product';
-import { ActivatedRoute } from '@angular/router';
-import { Title } from '@angular/platform-browser';
-import { pipe } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 // tslint:disable-next-line: no-conflicting-lifecycle
 @Component({
@@ -18,7 +16,7 @@ export class AddProductsComponent implements OnInit {
   data: any;
   addForm: FormGroup;
   id: any;
-  constructor(private productService: ProductService, private route: ActivatedRoute) {
+  constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router) {
   }
   ngOnInit() {
     this.addForm = new FormGroup({
@@ -52,11 +50,13 @@ export class AddProductsComponent implements OnInit {
       this.id = +params.id;
       if (this.id) {
         this.productService.updateProducts(form.value, this.id).subscribe(data => {
-          console.log(data);
+          alert('Product Updated Successfully');
+          this.router.navigate(['']);
         });
       } else {
         this.productService.addProducts(form.value).subscribe(data => {
-          console.log(data);
+          alert('Product Added Successfully');
+          this.router.navigate(['']);
         });
       }
     });

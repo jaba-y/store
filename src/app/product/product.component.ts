@@ -9,7 +9,7 @@ import { Products } from '../model/product';
 })
 export class ProductComponent implements OnInit {
   products: any;
-
+  cart = 0;
   // products: Products[];
   constructor(private productService: ProductService) { }
   getProducts(): void {
@@ -20,5 +20,12 @@ export class ProductComponent implements OnInit {
   }
   ngOnInit() {
     this.getProducts();
+  }
+  deleted(event) {
+    this.getProducts();
+  }
+  added(event) {
+    this.cart += 1;
+    console.log(this.cart);
   }
 }
